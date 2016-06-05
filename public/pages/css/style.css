@@ -1,0 +1,133 @@
+.sidebar {
+  position: fixed;
+  margin-left: -25px;
+}
+
+.sidebar-header-custom {
+  height: 60px;
+  background-color: #272b35;
+  margin-left: -15px;
+  margin-right: 29px;
+}
+
+
+.sidebar-menu-custom {
+  background-color: #2B303B;
+  margin-left: -15px;
+  margin-right: 29px;
+}
+
+.list-sidebar {
+ height: 49px;
+}
+
+.ul-style {
+  list-style-type: none;
+}
+
+.header-first-list-sidebar {
+  height: 30px;
+  background-color: #2B303B;
+  margin-left: -15px;
+  margin-right: 29px;
+}
+
+.header {
+  margin-left: -43px;
+  width: 1278px;
+}
+
+.header-logo {
+  margin-top: 18px;
+  margin-left: 18px;
+}
+
+.header-menubar {
+  margin-top: 18px;
+  margin-left: -18px;
+}
+
+.header-searchbar {
+  margin-top: 18px;
+  margin-left: -70px;
+}
+
+.header-profilebar {
+  margin-top: 6px;
+  margin-left: 200px;
+}
+
+.header-profileber-menuhamburger {
+  margin-top: 14px;
+}
+
+.home-bigbox {
+  background-color: #466173;
+  height: 600px;
+  margin-top: 20px;
+  margin-left: -35px;
+}
+
+.home-bluebox {
+  background-color: #48B0F7;
+  margin-top: 20px;
+  height: 288px;
+  margin-right: 20px;
+}
+
+.home-purplebox {
+  background-color: #8C91AB;
+  margin-top: 20px;
+  height: 288px;
+  margin-right: 20px;
+}
+
+.home-toscabox {
+  background-color: #10CFBD;
+  margin-top: 20px;
+  height: 288px;
+  margin-right: 20px;
+}
+
+.home-greybox {
+  background-color: #939393;
+  margin-top: 20px;
+  height: 288px;
+  margin-right: 20px;
+}
+
+.email-sidebar {
+  margin-left: -60px;
+  height: 608px;
+}
+
+.social-cover {
+  background-color: #47B5AB;
+  height: 300px;
+  margin-left: -29px;
+}
+
+.simform {
+  height: 100px;
+}
+
+.social-update {
+  margin-left: 200px;
+  margin-right: 20px;
+}
+
+.card {
+  margin-bottom: 0px;
+}
+
+.email-inbox {
+  margin-left: -118px;
+}
+
+.no-email {
+  margin-left: 80px;
+}
+
+.calendar {
+  margin-left: -43px;
+}
