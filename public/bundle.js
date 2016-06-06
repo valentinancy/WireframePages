@@ -25879,7 +25879,7 @@
 
 	var _Email2 = _interopRequireDefault(_Email);
 
-	var _Social = __webpack_require__(245);
+	var _Social = __webpack_require__(247);
 
 	var _Social2 = _interopRequireDefault(_Social);
 
@@ -26054,7 +26054,7 @@
 	                  { className: "" },
 	                  _react2.default.createElement(
 	                    "span",
-	                    { className: "bg-success icon-thumbnail" },
+	                    { className: "icon-thumbnail" },
 	                    _react2.default.createElement("i", { className: "pg-home" })
 	                  )
 	                )
@@ -26064,11 +26064,11 @@
 	              "div",
 	              { className: "list-sidebar" },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
+	                "li",
+	                { className: "" },
 	                _react2.default.createElement(
-	                  "li",
-	                  { className: "" },
+	                  "a",
+	                  { href: "", className: "detailed" },
 	                  _react2.default.createElement(
 	                    "span",
 	                    { className: "icon-thumbnail", onClick: function onClick() {
@@ -26132,125 +26132,6 @@
 	                        return _this2.handleClickCalendar();
 	                      } },
 	                    _react2.default.createElement("i", { className: "pg-calender" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg-layouts" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg-layouts2" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    "Ui"
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg-form" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg-grid" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg pg-ui" })
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
-	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail" },
-	                    _react2.default.createElement("i", { className: "pg-tables" })
 	                  )
 	                )
 	              )
@@ -26644,7 +26525,7 @@
 	              { className: 'col-md-6' },
 	              _react2.default.createElement(
 	                'a',
-	                { href: '' },
+	                { href: '#' },
 	                _react2.default.createElement(_BlueBox2.default, null)
 	              )
 	            )
@@ -26762,7 +26643,7 @@
 	  _createClass(BlueBox, [{
 	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement("div", { className: "home-bluebox" });
+	      return _react2.default.createElement("div", { className: "home-bluebox selected-item" });
 	    }
 	  }]);
 
@@ -27070,11 +26951,11 @@
 
 	var _EmailSidebar2 = _interopRequireDefault(_EmailSidebar);
 
-	var _EmailInbox = __webpack_require__(250);
+	var _EmailInbox = __webpack_require__(245);
 
 	var _EmailInbox2 = _interopRequireDefault(_EmailInbox);
 
-	var _NoEmail = __webpack_require__(251);
+	var _NoEmail = __webpack_require__(246);
 
 	var _NoEmail2 = _interopRequireDefault(_NoEmail);
 
@@ -27344,518 +27225,6 @@
 /* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _SocialHeader = __webpack_require__(246);
-
-	var _SocialHeader2 = _interopRequireDefault(_SocialHeader);
-
-	var _SocialProfile = __webpack_require__(247);
-
-	var _SocialProfile2 = _interopRequireDefault(_SocialProfile);
-
-	var _SocialInput = __webpack_require__(248);
-
-	var _SocialInput2 = _interopRequireDefault(_SocialInput);
-
-	var _SocialUpdate = __webpack_require__(249);
-
-	var _SocialUpdate2 = _interopRequireDefault(_SocialUpdate);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Social = function (_React$Component) {
-	  _inherits(Social, _React$Component);
-
-	  function Social() {
-	    _classCallCheck(this, Social);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Social).apply(this, arguments));
-	  }
-
-	  _createClass(Social, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'social' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(_SocialHeader2.default, null)
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(_SocialProfile2.default, null)
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'row' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'col-md-6' },
-	            _react2.default.createElement(_SocialInput2.default, null)
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'col-md-6' },
-	            _react2.default.createElement(_SocialUpdate2.default, null),
-	            _react2.default.createElement(_SocialUpdate2.default, null),
-	            _react2.default.createElement(_SocialUpdate2.default, null)
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return Social;
-	}(_react2.default.Component);
-
-	exports.default = Social;
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SocialHeader = function (_React$Component) {
-	  _inherits(SocialHeader, _React$Component);
-
-	  function SocialHeader() {
-	    _classCallCheck(this, SocialHeader);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialHeader).apply(this, arguments));
-	  }
-
-	  _createClass(SocialHeader, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "social-header" },
-	        _react2.default.createElement("div", { className: "social-cover" })
-	      );
-	    }
-	  }]);
-
-	  return SocialHeader;
-	}(_react2.default.Component);
-
-	exports.default = SocialHeader;
-
-/***/ },
-/* 247 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SocialProfile = function (_React$Component) {
-	  _inherits(SocialProfile, _React$Component);
-
-	  function SocialProfile() {
-	    _classCallCheck(this, SocialProfile);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialProfile).apply(this, arguments));
-	  }
-
-	  _createClass(SocialProfile, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "social-profile" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "container-fluid p-t-30 p-b-30 " },
-	          _react2.default.createElement(
-	            "div",
-	            { className: "row" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col-md-4" },
-	              _react2.default.createElement(
-	                "div",
-	                { className: "container-xs-height" },
-	                _react2.default.createElement(
-	                  "div",
-	                  { className: "row-xs-height" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "social-user-profile col-xs-height text-center col-top" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "thumbnail-wrapper d48 circular bordered b-white" },
-	                      _react2.default.createElement("img", { alt: "Avatar", width: "55", height: "55", src: "assets/img/profiles/avatar.jpg" })
-	                    ),
-	                    _react2.default.createElement("br", null),
-	                    _react2.default.createElement("i", { className: "fa fa-check-circle text-success fs-16 m-t-10" })
-	                  ),
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "col-xs-height p-l-20" },
-	                    _react2.default.createElement(
-	                      "h3",
-	                      { className: "no-margin" },
-	                      "David Nester"
-	                    ),
-	                    _react2.default.createElement(
-	                      "p",
-	                      { className: "no-margin fs-16" },
-	                      "is excited about the new pages design framework"
-	                    ),
-	                    _react2.default.createElement(
-	                      "p",
-	                      { className: "hint-text m-t-5 small" },
-	                      "San Fransisco Bay | CEO at Pages.inc"
-	                    )
-	                  )
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col-md-4" },
-	              _react2.default.createElement(
-	                "p",
-	                { className: "no-margin fs-16" },
-	                "Hi My Name is David Nester, & heres my new pages user profile page"
-	              ),
-	              _react2.default.createElement(
-	                "p",
-	                { className: "hint-text m-t-5 small" },
-	                "I love reading people's about page especially those who are in the same industry as me."
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "col-md-4" },
-	              _react2.default.createElement(
-	                "p",
-	                { className: "m-b-5 small" },
-	                "1,435 Mutual Friends"
-	              ),
-	              _react2.default.createElement(
-	                "ul",
-	                { className: "list-unstyled " },
-	                _react2.default.createElement(
-	                  "li",
-	                  { className: "m-r-10" },
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/1.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/2.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/3.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/4.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/5.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/6.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
-	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/7.jpg" })
-	                  )
-	                ),
-	                _react2.default.createElement(
-	                  "li",
-	                  null,
-	                  _react2.default.createElement(
-	                    "div",
-	                    { className: "thumbnail-wrapper d32 circular b-white" },
-	                    _react2.default.createElement(
-	                      "div",
-	                      { className: "bg-master text-center text-white" },
-	                      _react2.default.createElement(
-	                        "span",
-	                        null,
-	                        "+34"
-	                      )
-	                    )
-	                  )
-	                )
-	              ),
-	              _react2.default.createElement("br", null),
-	              _react2.default.createElement(
-	                "p",
-	                { className: "m-t-5 small" },
-	                "More friends"
-	              )
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SocialProfile;
-	}(_react2.default.Component);
-
-	exports.default = SocialProfile;
-
-/***/ },
-/* 248 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SocialInput = function (_React$Component) {
-	  _inherits(SocialInput, _React$Component);
-
-	  function SocialInput() {
-	    _classCallCheck(this, SocialInput);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialInput).apply(this, arguments));
-	  }
-
-	  _createClass(SocialInput, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "social-input" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "card col2 padding-20", "data-social": "item" },
-	          _react2.default.createElement(
-	            "form",
-	            { className: "simform no-margin", autocomplete: "off", "data-social": "status" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "status-form-inner" },
-	              _react2.default.createElement(
-	                "span",
-	                null,
-	                _react2.default.createElement(
-	                  "label",
-	                  { "for": "status-q1" },
-	                  "What's on your mind?"
-	                )
-	              ),
-	              _react2.default.createElement("br", null)
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SocialInput;
-	}(_react2.default.Component);
-
-	exports.default = SocialInput;
-
-/***/ },
-/* 249 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SocialUpdate = function (_React$Component) {
-	  _inherits(SocialUpdate, _React$Component);
-
-	  function SocialUpdate() {
-	    _classCallCheck(this, SocialUpdate);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialUpdate).apply(this, arguments));
-	  }
-
-	  _createClass(SocialUpdate, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "social-update" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "card share  col1", "data-social": "item" },
-	          _react2.default.createElement("div", { className: "circle", "data-toggle": "tooltip", title: "Label", "data-container": "body" }),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "card-header clearfix" },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "user-pic" },
-	              _react2.default.createElement("img", { alt: "Profile Image", width: "33", height: "33", src: "assets/img/profiles/6x.jpg" })
-	            ),
-	            _react2.default.createElement(
-	              "h5",
-	              null,
-	              "Nathaniel Hamilton"
-	            ),
-	            _react2.default.createElement(
-	              "h6",
-	              null,
-	              "Shared a Tweet",
-	              _react2.default.createElement(
-	                "span",
-	                { className: "location semi-bold" },
-	                _react2.default.createElement("i", { "class": "icon-map" }),
-	                "  NYC, New York"
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "div",
-	            { className: "card-description" },
-	            _react2.default.createElement(
-	              "p",
-	              null,
-	              "Testing can show the presense of bugs, but not their absence."
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "via" },
-	              "via Twitter"
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return SocialUpdate;
-	}(_react2.default.Component);
-
-	exports.default = SocialUpdate;
-
-/***/ },
-/* 250 */
-/***/ function(module, exports, __webpack_require__) {
-
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -28071,7 +27440,7 @@
 	exports.default = EmailInbox;
 
 /***/ },
-/* 251 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28134,6 +27503,518 @@
 	}(_react2.default.Component);
 
 	exports.default = NoEmail;
+
+/***/ },
+/* 247 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SocialHeader = __webpack_require__(248);
+
+	var _SocialHeader2 = _interopRequireDefault(_SocialHeader);
+
+	var _SocialProfile = __webpack_require__(249);
+
+	var _SocialProfile2 = _interopRequireDefault(_SocialProfile);
+
+	var _SocialInput = __webpack_require__(250);
+
+	var _SocialInput2 = _interopRequireDefault(_SocialInput);
+
+	var _SocialUpdate = __webpack_require__(251);
+
+	var _SocialUpdate2 = _interopRequireDefault(_SocialUpdate);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Social = function (_React$Component) {
+	  _inherits(Social, _React$Component);
+
+	  function Social() {
+	    _classCallCheck(this, Social);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Social).apply(this, arguments));
+	  }
+
+	  _createClass(Social, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'social' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(_SocialHeader2.default, null)
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(_SocialProfile2.default, null)
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-md-6' },
+	            _react2.default.createElement(_SocialInput2.default, null)
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-md-6' },
+	            _react2.default.createElement(_SocialUpdate2.default, null),
+	            _react2.default.createElement(_SocialUpdate2.default, null),
+	            _react2.default.createElement(_SocialUpdate2.default, null)
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Social;
+	}(_react2.default.Component);
+
+	exports.default = Social;
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SocialHeader = function (_React$Component) {
+	  _inherits(SocialHeader, _React$Component);
+
+	  function SocialHeader() {
+	    _classCallCheck(this, SocialHeader);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialHeader).apply(this, arguments));
+	  }
+
+	  _createClass(SocialHeader, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "social-header" },
+	        _react2.default.createElement("div", { className: "social-cover" })
+	      );
+	    }
+	  }]);
+
+	  return SocialHeader;
+	}(_react2.default.Component);
+
+	exports.default = SocialHeader;
+
+/***/ },
+/* 249 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SocialProfile = function (_React$Component) {
+	  _inherits(SocialProfile, _React$Component);
+
+	  function SocialProfile() {
+	    _classCallCheck(this, SocialProfile);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialProfile).apply(this, arguments));
+	  }
+
+	  _createClass(SocialProfile, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "social-profile" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "container-fluid p-t-30 p-b-30 " },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "container-xs-height" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "row-xs-height" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "social-user-profile col-xs-height text-center col-top" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "thumbnail-wrapper d48 circular bordered b-white" },
+	                      _react2.default.createElement("img", { alt: "Avatar", width: "55", height: "55", src: "assets/img/profiles/avatar.jpg" })
+	                    ),
+	                    _react2.default.createElement("br", null),
+	                    _react2.default.createElement("i", { className: "fa fa-check-circle text-success fs-16 m-t-10" })
+	                  ),
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "col-xs-height p-l-20" },
+	                    _react2.default.createElement(
+	                      "h3",
+	                      { className: "no-margin" },
+	                      "David Nester"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      { className: "no-margin fs-16" },
+	                      "is excited about the new pages design framework"
+	                    ),
+	                    _react2.default.createElement(
+	                      "p",
+	                      { className: "hint-text m-t-5 small" },
+	                      "San Fransisco Bay | CEO at Pages.inc"
+	                    )
+	                  )
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement(
+	                "p",
+	                { className: "no-margin fs-16" },
+	                "Hi My Name is David Nester, & heres my new pages user profile page"
+	              ),
+	              _react2.default.createElement(
+	                "p",
+	                { className: "hint-text m-t-5 small" },
+	                "I love reading people's about page especially those who are in the same industry as me."
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement(
+	                "p",
+	                { className: "m-b-5 small" },
+	                "1,435 Mutual Friends"
+	              ),
+	              _react2.default.createElement(
+	                "ul",
+	                { className: "list-unstyled " },
+	                _react2.default.createElement(
+	                  "li",
+	                  { className: "m-r-10" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/1.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/2.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/3.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/4.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/5.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/6.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white m-r-5 b-a b-white" },
+	                    _react2.default.createElement("img", { width: "35", height: "35", src: "assets/img/profiles/7.jpg" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "li",
+	                  null,
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "thumbnail-wrapper d32 circular b-white" },
+	                    _react2.default.createElement(
+	                      "div",
+	                      { className: "bg-master text-center text-white" },
+	                      _react2.default.createElement(
+	                        "span",
+	                        null,
+	                        "+34"
+	                      )
+	                    )
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement("br", null),
+	              _react2.default.createElement(
+	                "p",
+	                { className: "m-t-5 small" },
+	                "More friends"
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SocialProfile;
+	}(_react2.default.Component);
+
+	exports.default = SocialProfile;
+
+/***/ },
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SocialInput = function (_React$Component) {
+	  _inherits(SocialInput, _React$Component);
+
+	  function SocialInput() {
+	    _classCallCheck(this, SocialInput);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialInput).apply(this, arguments));
+	  }
+
+	  _createClass(SocialInput, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "social-input" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "card col2 padding-20", "data-social": "item" },
+	          _react2.default.createElement(
+	            "form",
+	            { className: "simform no-margin", autocomplete: "off", "data-social": "status" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "status-form-inner" },
+	              _react2.default.createElement(
+	                "span",
+	                null,
+	                _react2.default.createElement(
+	                  "label",
+	                  { "for": "status-q1" },
+	                  "What's on your mind?"
+	                )
+	              ),
+	              _react2.default.createElement("br", null)
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SocialInput;
+	}(_react2.default.Component);
+
+	exports.default = SocialInput;
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SocialUpdate = function (_React$Component) {
+	  _inherits(SocialUpdate, _React$Component);
+
+	  function SocialUpdate() {
+	    _classCallCheck(this, SocialUpdate);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialUpdate).apply(this, arguments));
+	  }
+
+	  _createClass(SocialUpdate, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "social-update" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "card share  col1", "data-social": "item" },
+	          _react2.default.createElement("div", { className: "circle", "data-toggle": "tooltip", title: "Label", "data-container": "body" }),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "card-header clearfix" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "user-pic" },
+	              _react2.default.createElement("img", { alt: "Profile Image", width: "33", height: "33", src: "assets/img/profiles/6x.jpg" })
+	            ),
+	            _react2.default.createElement(
+	              "h5",
+	              null,
+	              "Nathaniel Hamilton"
+	            ),
+	            _react2.default.createElement(
+	              "h6",
+	              null,
+	              "Shared a Tweet",
+	              _react2.default.createElement(
+	                "span",
+	                { className: "location semi-bold" },
+	                _react2.default.createElement("i", { "class": "icon-map" }),
+	                "  NYC, New York"
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "card-description" },
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Testing can show the presense of bugs, but not their absence."
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "via" },
+	              "via Twitter"
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SocialUpdate;
+	}(_react2.default.Component);
+
+	exports.default = SocialUpdate;
 
 /***/ },
 /* 252 */

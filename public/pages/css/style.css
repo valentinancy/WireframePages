@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  margin-left: -25px;
+  margin-left: -26px;
 }
 
 .sidebar-header-custom {
@@ -33,8 +33,9 @@
 }
 
 .header {
-  margin-left: -43px;
-  width: 1278px;
+  margin-left: -42px;
+  margin-right: -20px;
+  width: inherit;
 }
 
 .header-logo {
@@ -129,5 +130,13 @@
 }
 
 .calendar {
-  margin-left: -43px;
+  margin-left: -44px;
+}
+
+.icon-thumbnail:hover {
+  background-color: #10CFBD;
+}
+
+.icon-thumbnail:visited {
+  background-color: #10CFBD;
 }

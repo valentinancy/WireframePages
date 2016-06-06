@@ -19,7 +19,7 @@ class Home extends React.Component {
               <a href=''><PurpleBox /></a>
             </div>
             <div className="col-md-6">
-              <a href=''><BlueBox /></a>
+              <a href="#"><BlueBox /></a>
             </div>
           </div>
           <div className="row">

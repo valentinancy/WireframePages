@@ -27,10 +27,10 @@ class Sidebar extends React.Component {
         <div className="sidebar-menu sidebar-menu-custom">
           <ul className="menu-items ul-style">
             <div className="list-sidebar">
-              <a href=''><li className=""><span className="bg-success icon-thumbnail"><i className="pg-home"></i></span></li></a>
+              <a href=''><li className=""><span className="icon-thumbnail"><i className="pg-home"></i></span></li></a>
             </div>
             <div className="list-sidebar">
-              <a href='' ><li className=""><span className="icon-thumbnail" onClick={() => this.handleClickWidget()}>W</span></li></a>
+              <li className=""><a href='' className="detailed"><span className="icon-thumbnail" onClick={() => this.handleClickWidget()}>W</span></a></li>
             </div>
             <div className="list-sidebar">
               <a href=''><li><span className="icon-thumbnail" onClick={() => this.handleClickEmail()}><i className="pg-mail"></i></span></li></a>
@@ -40,27 +40,6 @@ class Sidebar extends React.Component {
             </div>
             <div className="list-sidebar">
               <a href=''><li><span className="icon-thumbnail" onClick={() => this.handleClickCalendar()}><i className="pg-calender"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg-layouts"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg-layouts2"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail">Ui</span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg-form"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg-grid"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg pg-ui"></i></span></li></a>
-            </div>
-            <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail"><i className="pg-tables"></i></span></li></a>
             </div>
           </ul>
         </div>
