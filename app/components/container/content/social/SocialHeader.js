@@ -5,7 +5,7 @@ class SocialHeader extends React.Component {
     return (
       <div className="social-header">
        <div className="social-cover">
-          
+
        </div>
       </div>
     )

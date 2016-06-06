@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuBar from './header/MenuBar';
-import SearchBar from './header/SearchBar';
-import ProfileBar from './header/ProfileBar';
+import MenuBar from './MenuBar';
+import SearchBar from './SearchBar';
+import ProfileBar from './ProfileBar';
 
 class Header extends React.Component {
   render() {

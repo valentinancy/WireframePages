@@ -1,24 +1,29 @@
 .sidebar {
   position: fixed;
-  margin-left: -26px;
+  margin-left: -52px;
+  height: 100%;
+  background-color: #2B303B;
 }
 
 .sidebar-header-custom {
   height: 60px;
   background-color: #272b35;
-  margin-left: -15px;
-  margin-right: 29px;
+  margin-right: 0px;
 }
 
 
 .sidebar-menu-custom {
-  background-color: #2B303B;
-  margin-left: -15px;
-  margin-right: 29px;
+  /*background-color: #2B303B;*/
+  margin-left: 23px;
+  margin-right: -2px;
 }
 
 .list-sidebar {
  height: 49px;
+}
+
+.menu-items {
+  margin-right: 0px;
 }
 
 .ul-style {
@@ -33,7 +38,7 @@
 }
 
 .header {
-  margin-left: -42px;
+  margin-left: -37px;
   margin-right: -20px;
   width: inherit;
 }
@@ -98,14 +103,14 @@
 }
 
 .email-sidebar {
-  margin-left: -60px;
+  margin-left: -52px;
   height: 608px;
 }
 
 .social-cover {
   background-color: #47B5AB;
   height: 300px;
-  margin-left: -29px;
+  margin-left: -22px;
 }
 
 .simform {
@@ -130,7 +135,7 @@
 }
 
 .calendar {
-  margin-left: -44px;
+  margin-left: -37px;
 }
 
 .icon-thumbnail:hover {
@@ -139,4 +144,17 @@
 
 .icon-thumbnail:visited {
   background-color: #10CFBD;
+}
+
+.login-cover {
+  background-color: #B99FAD;
+  height: 667px;
+  width: 820px;
+  margin-left: -15px;
+}
+
+.login-form {
+  background-color: white;
+  height: 667px;
+  margin-top: -30px;
 }

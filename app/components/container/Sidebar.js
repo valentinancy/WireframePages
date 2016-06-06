@@ -2,19 +2,23 @@ import React from 'react';
 
 class Sidebar extends React.Component {
   handleClickWidget() {
-    this.props.history.pushState(null,"widget")
+    this.props.history.pushState(null,"home/widget")
   }
 
   handleClickEmail() {
-    this.props.history.pushState(null,"email")
+    this.props.history.pushState(null,"home/email")
   }
 
   handleClickSocial() {
-    this.props.history.pushState(null,"social")
+    this.props.history.pushState(null,"home/social")
   }
 
   handleClickCalendar() {
-    this.props.history.pushState(null,"calendar")
+    this.props.history.pushState(null,"home/calendar")
+  }
+
+  handleClickHome() {
+    this.props.history.pushState(null,"home")
   }
 
   render() {
@@ -27,7 +31,7 @@ class Sidebar extends React.Component {
         <div className="sidebar-menu sidebar-menu-custom">
           <ul className="menu-items ul-style">
             <div className="list-sidebar">
-              <a href=''><li className=""><span className="icon-thumbnail"><i className="pg-home"></i></span></li></a>
+              <a href=''><li className=""><span className="icon-thumbnail" onClick={() => this.handleClickHome()}><i className="pg-home"></i></span></li></a>
             </div>
             <div className="list-sidebar">
               <li className=""><a href='' className="detailed"><span className="icon-thumbnail" onClick={() => this.handleClickWidget()}>W</span></a></li>
