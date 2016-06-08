@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
     this.usernameRef.value = '';
     this.passwordRef.value = '';
     if (username==password) {
-      this.props.history.pushState(null,"home/" + username)
+      this.props.history.pushState(null,`home/${username}`)
     }
     else {
       alert("username and password doesn't match!")

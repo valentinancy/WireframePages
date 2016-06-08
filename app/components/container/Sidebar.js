@@ -2,23 +2,23 @@ import React from 'react';
 
 class Sidebar extends React.Component {
   handleClickWidget() {
-    this.props.history.pushState(null,"home/widget")
+    this.props.history.pushState(null,`home/${this.props.username}/widget/${this.props.username}`)
   }
 
   handleClickEmail() {
-    this.props.history.pushState(null,"home/email")
+    this.props.history.pushState(null,`home/${this.props.username}/email/${this.props.username}`)
   }
 
   handleClickSocial() {
-    this.props.history.pushState(null,"home/social")
+    this.props.history.pushState(null,`home/${this.props.username}/social/${this.props.username}`)
   }
 
   handleClickCalendar() {
-    this.props.history.pushState(null,"home/calendar")
+    this.props.history.pushState(null,`home/${this.props.username}/calendar/${this.props.username}`)
   }
 
   handleClickHome() {
-    this.props.history.pushState(null,"home")
+    this.props.history.pushState(null,`home/${this.props.username}`)
   }
 
   render() {

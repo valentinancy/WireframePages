@@ -13,10 +13,10 @@ export default (
   <Route path="/" component={Main}>
     <Route path="home/:username" component={Home}>
       <IndexRoute component={HomeContent}></IndexRoute>
-      <Route path="widget" component={Widget}></Route>
-      <Route path="email" component={Email}></Route>
-      <Route path="social" component={Social}></Route>
-      <Route path="calendar" component={Calendar}></Route>
+      <Route path="widget/:second" component={Widget}></Route>
+      <Route path="email/:second" component={Email}></Route>
+      <Route path="social/:second" component={Social}></Route>
+      <Route path="calendar/:second" component={Calendar}></Route>
     </Route>
     <IndexRoute component={Login}></IndexRoute>
   </Route>

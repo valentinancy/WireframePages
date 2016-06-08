@@ -25904,10 +25904,10 @@
 	    _reactRouter.Route,
 	    { path: 'home/:username', component: _Home2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContent2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'widget', component: _Widget2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'email', component: _Email2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'social', component: _Social2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'calendar', component: _Calendar2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'widget/:second', component: _Widget2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'email/:second', component: _Email2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'social/:second', component: _Social2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'calendar/:second', component: _Calendar2.default })
 	  ),
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default })
 	);
@@ -26015,7 +26015,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-1' },
-	          _react2.default.createElement(_Sidebar2.default, { history: this.props.history })
+	          _react2.default.createElement(_Sidebar2.default, { history: this.props.history, username: this.props.params.username })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -26076,27 +26076,27 @@
 	  _createClass(Sidebar, [{
 	    key: "handleClickWidget",
 	    value: function handleClickWidget() {
-	      this.props.history.pushState(null, "home/widget");
+	      this.props.history.pushState(null, "home/" + this.props.username + "/widget/" + this.props.username);
 	    }
 	  }, {
 	    key: "handleClickEmail",
 	    value: function handleClickEmail() {
-	      this.props.history.pushState(null, "home/email");
+	      this.props.history.pushState(null, "home/" + this.props.username + "/email/" + this.props.username);
 	    }
 	  }, {
 	    key: "handleClickSocial",
 	    value: function handleClickSocial() {
-	      this.props.history.pushState(null, "home/social");
+	      this.props.history.pushState(null, "home/" + this.props.username + "/social/" + this.props.username);
 	    }
 	  }, {
 	    key: "handleClickCalendar",
 	    value: function handleClickCalendar() {
-	      this.props.history.pushState(null, "home/calendar");
+	      this.props.history.pushState(null, "home/" + this.props.username + "/calendar/" + this.props.username);
 	    }
 	  }, {
 	    key: "handleClickHome",
 	    value: function handleClickHome() {
-	      this.props.history.pushState(null, "home");
+	      this.props.history.pushState(null, "home/" + this.props.username);
 	    }
 	  }, {
 	    key: "render",
@@ -28155,7 +28155,7 @@
 	      this.usernameRef.value = '';
 	      this.passwordRef.value = '';
 	      if (username == password) {
-	        this.props.history.pushState(null, "home/" + username);
+	        this.props.history.pushState(null, 'home/' + username);
 	      } else {
 	        alert("username and password doesn't match!");
 	      }

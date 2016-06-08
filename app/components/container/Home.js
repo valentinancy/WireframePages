@@ -7,7 +7,7 @@ class Home extends React.Component {
     return(
       <div className="main-container">
         <div className="col-md-1">
-          <Sidebar history={this.props.history}/>
+          <Sidebar history={this.props.history} username={this.props.params.username}/>
         </div>
         <div className="col-md-11">
           <div className="row">
