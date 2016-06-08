@@ -11,7 +11,7 @@ class Home extends React.Component {
         </div>
         <div className="col-md-11">
           <div className="row">
-            <Header />
+            <Header username={this.props.params.username} />
           </div>
           <div className="row">
             {this.props.children}

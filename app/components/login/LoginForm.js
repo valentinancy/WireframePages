@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
     this.usernameRef.value = '';
     this.passwordRef.value = '';
     if (username==password) {
-      this.props.history.pushState(null,"home")
+      this.props.history.pushState(null,"home/" + username)
     }
     else {
       alert("username and password doesn't match!")
@@ -24,10 +24,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="login-form">
         <div className="login-container bg-white">
-          <form>
+          <form method="get">
             <div className="p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40">
               <img src="assets/img/logo.png" alt="logo"width="78" height="22"/>
               <p className="p-t-35">Sign into your pages account</p>
@@ -43,7 +44,7 @@ class LoginForm extends React.Component {
                     <input type="password" className="form-control" placeholder="Credentials" ref={(ref) => this.getPassword(ref)}/>
                   </div>
                 </div>
-                <button onClick={() => this.handleLogin()} className="btn btn-primary m-t-10">Sign in</button>
+                <button onClick={() => this.handleLogin()} type="submit" className="btn btn-primary m-t-10">Sign in</button>
             </div>
           </form>
         </div>

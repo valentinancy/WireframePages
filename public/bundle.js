@@ -25902,7 +25902,7 @@
 	  { path: '/', component: _Main2.default },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: 'home', component: _Home2.default },
+	    { path: 'home/:username', component: _Home2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContent2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'widget', component: _Widget2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'email', component: _Email2.default }),
@@ -26023,7 +26023,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
-	            _react2.default.createElement(_Header2.default, null)
+	            _react2.default.createElement(_Header2.default, { username: this.props.params.username })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -26289,7 +26289,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-5' },
-	          _react2.default.createElement(_ProfileBar2.default, null)
+	          _react2.default.createElement(_ProfileBar2.default, { username: this.props.username })
 	        )
 	      );
 	    }
@@ -26475,7 +26475,7 @@
 	          _react2.default.createElement(
 	            "span",
 	            { className: "semi-bold" },
-	            "David Nest"
+	            this.props.username
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -28155,7 +28155,7 @@
 	      this.usernameRef.value = '';
 	      this.passwordRef.value = '';
 	      if (username == password) {
-	        this.props.history.pushState(null, "home");
+	        this.props.history.pushState(null, "home/" + username);
 	      } else {
 	        alert("username and password doesn't match!");
 	      }
@@ -28173,7 +28173,7 @@
 	          { className: 'login-container bg-white' },
 	          _react2.default.createElement(
 	            'form',
-	            null,
+	            { method: 'get' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'p-l-50 m-l-20 p-r-50 m-r-20 p-t-50 m-t-30 sm-p-l-15 sm-p-r-15 sm-p-t-40' },
@@ -28219,7 +28219,7 @@
 	                'button',
 	                { onClick: function onClick() {
 	                    return _this2.handleLogin();
-	                  }, className: 'btn btn-primary m-t-10' },
+	                  }, type: 'submit', className: 'btn btn-primary m-t-10' },
 	                'Sign in'
 	              )
 	            )

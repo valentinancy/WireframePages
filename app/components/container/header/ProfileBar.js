@@ -5,7 +5,7 @@ class ProfileBar extends React.Component {
     return (
       <div className="header-profilebar">
         <div className="pull-left p-r-1 p-t-10 fs-16 font-heading col-md-6">
-          <span className="semi-bold">David Nest</span>
+          <span className="semi-bold">{this.props.username}</span>
         </div>
         <div className="col-md-2">
           <button className="profile-dropdown-toggle" type="button">

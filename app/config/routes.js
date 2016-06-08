@@ -11,7 +11,7 @@ import HomeContent from '../components/container/content/HomeContent'
 
 export default (
   <Route path="/" component={Main}>
-    <Route path="home" component={Home}>
+    <Route path="home/:username" component={Home}>
       <IndexRoute component={HomeContent}></IndexRoute>
       <Route path="widget" component={Widget}></Route>
       <Route path="email" component={Email}></Route>

@@ -17,7 +17,7 @@ class Header extends React.Component {
           <SearchBar />
         </div>
         <div className="col-md-5">
-          <ProfileBar />
+          <ProfileBar username={this.props.username}/>
         </div>
       </div>
     )
