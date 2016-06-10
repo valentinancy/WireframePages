@@ -11,7 +11,7 @@ class Email extends React.Component {
           <EmailSidebar />
         </div>
         <div className="col-md-2">
-          <EmailInbox />
+          <EmailInbox username={this.props.params.username}/>
         </div>
         <div className="col-md-6">
           <NoEmail />

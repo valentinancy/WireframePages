@@ -11,7 +11,7 @@ class EmailInbox extends React.Component {
             <div className="user-pic">
               <img alt="Profile Image" width="33" height="33" src="assets/img/profiles/6x.jpg"/>
             </div>
-            <h5>Nathaniel Hamilton</h5>
+            <h5>{this.props.username}</h5>
             <span className="location semi-bold"><i class="icon-map"></i>Friday, 5.10 pm</span>
           </div>
           <div className="card-description">
@@ -25,7 +25,7 @@ class EmailInbox extends React.Component {
             <div className="user-pic">
               <img alt="Profile Image" width="33" height="33" src="assets/img/profiles/6x.jpg"/>
             </div>
-            <h5>Nathaniel Hamilton</h5>
+            <h5>{this.props.username}</h5>
             <span className="location semi-bold"><i class="icon-map"></i>Friday, 5.06 pm</span>
           </div>
           <div className="card-description">
@@ -39,7 +39,7 @@ class EmailInbox extends React.Component {
             <div className="user-pic">
               <img alt="Profile Image" width="33" height="33" src="assets/img/profiles/6x.jpg"/>
             </div>
-            <h5>Nathaniel Hamilton</h5>
+            <h5>{this.props.username}</h5>
             <span className="location semi-bold"><i class="icon-map"></i>Friday, 5.05 pm</span>
           </div>
           <div className="card-description">
@@ -53,7 +53,7 @@ class EmailInbox extends React.Component {
             <div className="user-pic">
               <img alt="Profile Image" width="33" height="33" src="assets/img/profiles/6x.jpg"/>
             </div>
-            <h5>Nathaniel Hamilton</h5>
+            <h5>{this.props.username}</h5>
             <span className="location semi-bold"><i class="icon-map"></i>Friday, 5.02 pm</span>
           </div>
           <div className="card-description">
@@ -67,7 +67,7 @@ class EmailInbox extends React.Component {
             <div className="user-pic">
               <img alt="Profile Image" width="33" height="33" src="assets/img/profiles/6x.jpg"/>
             </div>
-            <h5>Nathaniel Hamilton</h5>
+            <h5>{this.props.username}</h5>
             <span className="location semi-bold"><i class="icon-map"></i>Friday, 5.00 pm</span>
           </div>
           <div className="card-description">

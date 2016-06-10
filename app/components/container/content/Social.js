@@ -12,7 +12,7 @@ class Social extends React.Component {
           <SocialHeader />
         </div>
         <div className="row">
-          <SocialProfile />
+          <SocialProfile username={this.props.params.username}/>
         </div>
         <div className="row">
           <div className="col-md-6">

@@ -3,6 +3,7 @@ import React from 'react';
 class Sidebar extends React.Component {
   handleClickWidget() {
     this.props.history.pushState(null,`home/${this.props.username}/widget/${this.props.username}`)
+    // browserHistory.push(`home/${this.props.username}/widget/${this.props.username}`)
   }
 
   handleClickEmail() {

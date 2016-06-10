@@ -2,9 +2,11 @@ import React from 'react';
 import MenuBar from './MenuBar';
 import SearchBar from './SearchBar';
 import ProfileBar from './ProfileBar';
+import Logout from './Logout';
 
 class Header extends React.Component {
   render() {
+    console.log("header",this.props.history)
     return(
       <div className="header">
         <div className="header-logo col-md-2">
@@ -16,8 +18,11 @@ class Header extends React.Component {
         <div className="col-md-2">
           <SearchBar />
         </div>
-        <div className="col-md-5">
+        <div className="col-md-4">
           <ProfileBar username={this.props.username}/>
+        </div>
+        <div className="col-md-1">
+          <Logout history={this.props.history}/>
         </div>
       </div>
     )

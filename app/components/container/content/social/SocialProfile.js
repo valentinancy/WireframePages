@@ -17,7 +17,7 @@ class SocialProfile extends React.Component {
                   <i className="fa fa-check-circle text-success fs-16 m-t-10"></i>
                 </div>
                 <div className="col-xs-height p-l-20">
-                  <h3 className="no-margin">David Nester</h3>
+                  <h3 className="no-margin">{this.props.username}</h3>
                   <p className="no-margin fs-16">is excited about the new pages design framework
                   </p>
                   <p className="hint-text m-t-5 small">San Fransisco Bay | CEO at Pages.inc
@@ -27,7 +27,7 @@ class SocialProfile extends React.Component {
             </div>
           </div>
           <div className="col-md-4">
-            <p className="no-margin fs-16">Hi My Name is David Nester, &amp; heres my new pages user profile page</p>
+            <p className="no-margin fs-16">Hi My Name is {this.props.username}, &amp; heres my new pages user profile page</p>
             <p className="hint-text m-t-5 small">I love reading people's about page especially those who are in the same industry as me.</p>
           </div>
           <div className="col-md-4">

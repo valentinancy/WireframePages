@@ -68,6 +68,11 @@
 	  _routes2.default
 	), document.getElementById('app'));
 
+	// ReactDOM.render(
+	//   <Provider>{routes}</Provider>,
+	//   document.getElementById('app')
+	// )
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -25871,27 +25876,27 @@
 
 	var _reactRouter = __webpack_require__(168);
 
-	var _Widget = __webpack_require__(237);
+	var _Widget = __webpack_require__(238);
 
 	var _Widget2 = _interopRequireDefault(_Widget);
 
-	var _Email = __webpack_require__(242);
+	var _Email = __webpack_require__(243);
 
 	var _Email2 = _interopRequireDefault(_Email);
 
-	var _Social = __webpack_require__(246);
+	var _Social = __webpack_require__(247);
 
 	var _Social2 = _interopRequireDefault(_Social);
 
-	var _Calendar = __webpack_require__(251);
+	var _Calendar = __webpack_require__(252);
 
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
-	var _Login = __webpack_require__(252);
+	var _Login = __webpack_require__(253);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _HomeContent = __webpack_require__(255);
+	var _HomeContent = __webpack_require__(256);
 
 	var _HomeContent2 = _interopRequireDefault(_HomeContent);
 
@@ -25911,6 +25916,20 @@
 	  ),
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default })
 	);
+
+
+	{/*<Router history={browserHistory}>
+	   <Route path="/" component={Main}>
+	     <Route path="home/:username" component={Home}>
+	       <IndexRoute component={HomeContent}></IndexRoute>
+	       <Route path="widget/:second" component={Widget}></Route>
+	       <Route path="email/:second" component={Email}></Route>
+	       <Route path="social/:second" component={Social}></Route>
+	       <Route path="calendar/:second" component={Calendar}></Route>
+	     </Route>
+	     <IndexRoute component={Login}></IndexRoute>
+	   </Route>
+	  </Router>*/}
 
 /***/ },
 /* 230 */
@@ -26009,6 +26028,7 @@
 	  _createClass(Home, [{
 	    key: 'render',
 	    value: function render() {
+	      //console.log(this.props.params)
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main-container' },
@@ -26023,7 +26043,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
-	            _react2.default.createElement(_Header2.default, { username: this.props.params.username })
+	            _react2.default.createElement(_Header2.default, { history: this.props.history, username: this.props.params.username })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -26077,6 +26097,7 @@
 	    key: "handleClickWidget",
 	    value: function handleClickWidget() {
 	      this.props.history.pushState(null, "home/" + this.props.username + "/widget/" + this.props.username);
+	      // browserHistory.push(`home/${this.props.username}/widget/${this.props.username}`)
 	    }
 	  }, {
 	    key: "handleClickEmail",
@@ -26248,6 +26269,10 @@
 
 	var _ProfileBar2 = _interopRequireDefault(_ProfileBar);
 
+	var _Logout = __webpack_require__(237);
+
+	var _Logout2 = _interopRequireDefault(_Logout);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26268,6 +26293,7 @@
 	  _createClass(Header, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log("header", this.props.history);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'header' },
@@ -26288,8 +26314,13 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-md-5' },
+	          { className: 'col-md-4' },
 	          _react2.default.createElement(_ProfileBar2.default, { username: this.props.username })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-1' },
+	          _react2.default.createElement(_Logout2.default, { history: this.props.history })
 	        )
 	      );
 	    }
@@ -26525,19 +26556,83 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _PurpleBox = __webpack_require__(238);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Logout = function (_React$Component) {
+	  _inherits(Logout, _React$Component);
+
+	  function Logout() {
+	    _classCallCheck(this, Logout);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Logout).apply(this, arguments));
+	  }
+
+	  _createClass(Logout, [{
+	    key: 'handleLogout',
+	    value: function handleLogout() {
+	      //sessionStorage.clear();
+	      // setInterval( () => router.transitionTo('/'), 1000);
+	      this.props.history.pushState(null, '/');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'logout text-center' },
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'btn btn-block btn-default', onClick: function onClick() {
+	              return _this2.handleLogout();
+	            } },
+	          'Log out '
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Logout;
+	}(_react2.default.Component);
+
+	exports.default = Logout;
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PurpleBox = __webpack_require__(239);
 
 	var _PurpleBox2 = _interopRequireDefault(_PurpleBox);
 
-	var _BlueBox = __webpack_require__(239);
+	var _BlueBox = __webpack_require__(240);
 
 	var _BlueBox2 = _interopRequireDefault(_BlueBox);
 
-	var _GreyBox = __webpack_require__(240);
+	var _GreyBox = __webpack_require__(241);
 
 	var _GreyBox2 = _interopRequireDefault(_GreyBox);
 
-	var _ToscaBox = __webpack_require__(241);
+	var _ToscaBox = __webpack_require__(242);
 
 	var _ToscaBox2 = _interopRequireDefault(_ToscaBox);
 
@@ -26654,7 +26749,7 @@
 	exports.default = Widget;
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26699,7 +26794,7 @@
 	exports.default = PurpleBox;
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26744,7 +26839,7 @@
 	exports.default = BlueBox;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26789,7 +26884,7 @@
 	exports.default = GreyBox;
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26834,7 +26929,7 @@
 	exports.default = ToscaBox;
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26849,15 +26944,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EmailSidebar = __webpack_require__(243);
+	var _EmailSidebar = __webpack_require__(244);
 
 	var _EmailSidebar2 = _interopRequireDefault(_EmailSidebar);
 
-	var _EmailInbox = __webpack_require__(244);
+	var _EmailInbox = __webpack_require__(245);
 
 	var _EmailInbox2 = _interopRequireDefault(_EmailInbox);
 
-	var _NoEmail = __webpack_require__(245);
+	var _NoEmail = __webpack_require__(246);
 
 	var _NoEmail2 = _interopRequireDefault(_NoEmail);
 
@@ -26892,7 +26987,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-2' },
-	          _react2.default.createElement(_EmailInbox2.default, null)
+	          _react2.default.createElement(_EmailInbox2.default, { username: this.props.params.username })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -26909,7 +27004,7 @@
 	exports.default = Email;
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27124,7 +27219,7 @@
 	exports.default = EmailSidebar;
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27177,7 +27272,7 @@
 	            _react2.default.createElement(
 	              "h5",
 	              null,
-	              "Nathaniel Hamilton"
+	              this.props.username
 	            ),
 	            _react2.default.createElement(
 	              "span",
@@ -27211,7 +27306,7 @@
 	            _react2.default.createElement(
 	              "h5",
 	              null,
-	              "Nathaniel Hamilton"
+	              this.props.username
 	            ),
 	            _react2.default.createElement(
 	              "span",
@@ -27245,7 +27340,7 @@
 	            _react2.default.createElement(
 	              "h5",
 	              null,
-	              "Nathaniel Hamilton"
+	              this.props.username
 	            ),
 	            _react2.default.createElement(
 	              "span",
@@ -27279,7 +27374,7 @@
 	            _react2.default.createElement(
 	              "h5",
 	              null,
-	              "Nathaniel Hamilton"
+	              this.props.username
 	            ),
 	            _react2.default.createElement(
 	              "span",
@@ -27313,7 +27408,7 @@
 	            _react2.default.createElement(
 	              "h5",
 	              null,
-	              "Nathaniel Hamilton"
+	              this.props.username
 	            ),
 	            _react2.default.createElement(
 	              "span",
@@ -27342,7 +27437,7 @@
 	exports.default = EmailInbox;
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27407,7 +27502,7 @@
 	exports.default = NoEmail;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27422,19 +27517,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SocialHeader = __webpack_require__(247);
+	var _SocialHeader = __webpack_require__(248);
 
 	var _SocialHeader2 = _interopRequireDefault(_SocialHeader);
 
-	var _SocialProfile = __webpack_require__(248);
+	var _SocialProfile = __webpack_require__(249);
 
 	var _SocialProfile2 = _interopRequireDefault(_SocialProfile);
 
-	var _SocialInput = __webpack_require__(249);
+	var _SocialInput = __webpack_require__(250);
 
 	var _SocialInput2 = _interopRequireDefault(_SocialInput);
 
-	var _SocialUpdate = __webpack_require__(250);
+	var _SocialUpdate = __webpack_require__(251);
 
 	var _SocialUpdate2 = _interopRequireDefault(_SocialUpdate);
 
@@ -27469,7 +27564,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row' },
-	          _react2.default.createElement(_SocialProfile2.default, null)
+	          _react2.default.createElement(_SocialProfile2.default, { username: this.props.params.username })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -27497,7 +27592,7 @@
 	exports.default = Social;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27546,7 +27641,7 @@
 	exports.default = SocialHeader;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27616,7 +27711,7 @@
 	                    _react2.default.createElement(
 	                      "h3",
 	                      { className: "no-margin" },
-	                      "David Nester"
+	                      this.props.username
 	                    ),
 	                    _react2.default.createElement(
 	                      "p",
@@ -27638,7 +27733,9 @@
 	              _react2.default.createElement(
 	                "p",
 	                { className: "no-margin fs-16" },
-	                "Hi My Name is David Nester, & heres my new pages user profile page"
+	                "Hi My Name is ",
+	                this.props.username,
+	                ", & heres my new pages user profile page"
 	              ),
 	              _react2.default.createElement(
 	                "p",
@@ -27757,7 +27854,7 @@
 	exports.default = SocialProfile;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27827,7 +27924,7 @@
 	exports.default = SocialInput;
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27919,7 +28016,7 @@
 	exports.default = SocialUpdate;
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27968,7 +28065,7 @@
 	exports.default = Calendar;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27983,11 +28080,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _LoginCover = __webpack_require__(253);
+	var _LoginCover = __webpack_require__(254);
 
 	var _LoginCover2 = _interopRequireDefault(_LoginCover);
 
-	var _LoginForm = __webpack_require__(254);
+	var _LoginForm = __webpack_require__(255);
 
 	var _LoginForm2 = _interopRequireDefault(_LoginForm);
 
@@ -28034,7 +28131,7 @@
 	exports.default = Login;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28105,7 +28202,7 @@
 	exports.default = LoginCover;
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28235,7 +28332,7 @@
 	exports.default = LoginForm;
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28250,23 +28347,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BigBox = __webpack_require__(256);
+	var _BigBox = __webpack_require__(257);
 
 	var _BigBox2 = _interopRequireDefault(_BigBox);
 
-	var _BlueBox = __webpack_require__(239);
+	var _BlueBox = __webpack_require__(240);
 
 	var _BlueBox2 = _interopRequireDefault(_BlueBox);
 
-	var _PurpleBox = __webpack_require__(238);
+	var _PurpleBox = __webpack_require__(239);
 
 	var _PurpleBox2 = _interopRequireDefault(_PurpleBox);
 
-	var _ToscaBox = __webpack_require__(241);
+	var _ToscaBox = __webpack_require__(242);
 
 	var _ToscaBox2 = _interopRequireDefault(_ToscaBox);
 
-	var _GreyBox = __webpack_require__(240);
+	var _GreyBox = __webpack_require__(241);
 
 	var _GreyBox2 = _interopRequireDefault(_GreyBox);
 
@@ -28360,7 +28457,7 @@
 	exports.default = HomeContent;
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
