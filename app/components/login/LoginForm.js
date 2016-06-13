@@ -2,21 +2,14 @@ import React from 'react';
 
 class LoginForm extends React.Component {
 
-  getUsername(ref) {
-    this.usernameRef = ref;
-  }
-
-  getPassword(ref) {
-    this.passwordRef = ref;
-  }
-
-  handleLogin() {
+  handleLogin(val) {
+    val.preventDefault();
     const username = this.usernameRef.value;
     const password = this.passwordRef.value;
     this.usernameRef.value = '';
     this.passwordRef.value = '';
     if (username==password) {
-      this.props.history.pushState(null,`home/${username}`)
+      this.props.history.push(`home/${username}`)
     }
     else {
       alert("username and password doesn't match!")
@@ -35,16 +28,16 @@ class LoginForm extends React.Component {
                 <div className="form-group form-group-default">
                   <label>Login</label>
                   <div className="controls">
-                    <input type="text" placeholder="User Name" className="form-control" ref={(ref) => this.getUsername(ref)}/>
+                    <input type="text" placeholder="User Name" className="form-control" ref={(ref) => this.usernameRef = ref}/>
                   </div>
                 </div>
                 <div className="form-group form-group-default">
                   <label>Password</label>
                   <div className="controls">
-                    <input type="password" className="form-control" placeholder="Credentials" ref={(ref) => this.getPassword(ref)}/>
+                    <input type="password" className="form-control" placeholder="Credentials" ref={(ref) => this.passwordRef = ref}/>
                   </div>
                 </div>
-                <button onClick={() => this.handleLogin()} type="submit" className="btn btn-primary m-t-10">Sign in</button>
+                <button onClick={(val) => this.handleLogin(val)} type="submit" className="btn btn-primary m-t-10">Sign in</button>
             </div>
           </form>
         </div>

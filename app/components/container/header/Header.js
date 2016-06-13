@@ -6,7 +6,6 @@ import Logout from './Logout';
 
 class Header extends React.Component {
   render() {
-    console.log("header",this.props.history)
     return(
       <div className="header">
         <div className="header-logo col-md-2">

@@ -68,11 +68,6 @@
 	  _routes2.default
 	), document.getElementById('app'));
 
-	// ReactDOM.render(
-	//   <Provider>{routes}</Provider>,
-	//   document.getElementById('app')
-	// )
-
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -25884,52 +25879,55 @@
 
 	var _Email2 = _interopRequireDefault(_Email);
 
-	var _Social = __webpack_require__(247);
+	var _Social = __webpack_require__(248);
 
 	var _Social2 = _interopRequireDefault(_Social);
 
-	var _Calendar = __webpack_require__(252);
+	var _Calendar = __webpack_require__(253);
 
 	var _Calendar2 = _interopRequireDefault(_Calendar);
 
-	var _Login = __webpack_require__(253);
+	var _Login = __webpack_require__(254);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _HomeContent = __webpack_require__(256);
+	var _HomeContent = __webpack_require__(257);
 
 	var _HomeContent2 = _interopRequireDefault(_HomeContent);
+
+	var _CheckEmail = __webpack_require__(245);
+
+	var _CheckEmail2 = _interopRequireDefault(_CheckEmail);
+
+	var _ComposeEmail = __webpack_require__(259);
+
+	var _ComposeEmail2 = _interopRequireDefault(_ComposeEmail);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _Main2.default },
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: 'home/:username', component: _Home2.default },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContent2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'widget/:second', component: _Widget2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'email/:second', component: _Email2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'social/:second', component: _Social2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'calendar/:second', component: _Calendar2.default })
-	  ),
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default })
+	    { path: '/', component: _Main2.default },
+	    _react2.default.createElement(
+	      _reactRouter.Route,
+	      { path: 'home/:username', component: _Home2.default },
+	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeContent2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'widget/:second', component: _Widget2.default }),
+	      _react2.default.createElement(
+	        _reactRouter.Route,
+	        { path: 'email/:second', component: _Email2.default },
+	        _react2.default.createElement(_reactRouter.Route, { path: 'compose', component: _ComposeEmail2.default }),
+	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _CheckEmail2.default })
+	      ),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'social/:second', component: _Social2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: 'calendar/:second', component: _Calendar2.default })
+	    ),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Login2.default })
+	  )
 	);
-
-
-	{/*<Router history={browserHistory}>
-	   <Route path="/" component={Main}>
-	     <Route path="home/:username" component={Home}>
-	       <IndexRoute component={HomeContent}></IndexRoute>
-	       <Route path="widget/:second" component={Widget}></Route>
-	       <Route path="email/:second" component={Email}></Route>
-	       <Route path="social/:second" component={Social}></Route>
-	       <Route path="calendar/:second" component={Calendar}></Route>
-	     </Route>
-	     <IndexRoute component={Login}></IndexRoute>
-	   </Route>
-	  </Router>*/}
 
 /***/ },
 /* 230 */
@@ -26028,7 +26026,6 @@
 	  _createClass(Home, [{
 	    key: 'render',
 	    value: function render() {
-	      //console.log(this.props.params)
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main-container' },
@@ -26064,7 +26061,7 @@
 /* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26075,6 +26072,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26094,138 +26093,100 @@
 	  }
 
 	  _createClass(Sidebar, [{
-	    key: "handleClickWidget",
-	    value: function handleClickWidget() {
-	      this.props.history.pushState(null, "home/" + this.props.username + "/widget/" + this.props.username);
-	      // browserHistory.push(`home/${this.props.username}/widget/${this.props.username}`)
-	    }
-	  }, {
-	    key: "handleClickEmail",
-	    value: function handleClickEmail() {
-	      this.props.history.pushState(null, "home/" + this.props.username + "/email/" + this.props.username);
-	    }
-	  }, {
-	    key: "handleClickSocial",
-	    value: function handleClickSocial() {
-	      this.props.history.pushState(null, "home/" + this.props.username + "/social/" + this.props.username);
-	    }
-	  }, {
-	    key: "handleClickCalendar",
-	    value: function handleClickCalendar() {
-	      this.props.history.pushState(null, "home/" + this.props.username + "/calendar/" + this.props.username);
-	    }
-	  }, {
-	    key: "handleClickHome",
-	    value: function handleClickHome() {
-	      this.props.history.pushState(null, "home/" + this.props.username);
-	    }
-	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "sidebar" },
-	        _react2.default.createElement("div", { className: "sidebar-header sidebar-header-custom" }),
-	        _react2.default.createElement("div", { className: "header-first-list-sidebar" }),
+	        'div',
+	        { className: 'sidebar' },
+	        _react2.default.createElement('div', { className: 'sidebar-header sidebar-header-custom' }),
+	        _react2.default.createElement('div', { className: 'header-first-list-sidebar' }),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "sidebar-menu sidebar-menu-custom" },
+	          'div',
+	          { className: 'sidebar-menu sidebar-menu-custom' },
 	          _react2.default.createElement(
-	            "ul",
-	            { className: "menu-items ul-style" },
+	            'ul',
+	            { className: 'menu-items ul-style' },
 	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
+	              'div',
+	              { className: 'list-sidebar' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username },
 	                _react2.default.createElement(
-	                  "li",
-	                  { className: "" },
+	                  'li',
+	                  { className: '' },
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail", onClick: function onClick() {
-	                        return _this2.handleClickHome();
-	                      } },
-	                    _react2.default.createElement("i", { className: "pg-home" })
+	                    'span',
+	                    { className: 'icon-thumbnail' },
+	                    _react2.default.createElement('i', { className: 'pg-home' })
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
+	              'div',
+	              { className: 'list-sidebar' },
 	              _react2.default.createElement(
-	                "li",
-	                { className: "" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username + '/widget/' + this.props.username },
 	                _react2.default.createElement(
-	                  "a",
-	                  { href: "", className: "detailed" },
+	                  'li',
+	                  { className: '' },
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail", onClick: function onClick() {
-	                        return _this2.handleClickWidget();
-	                      } },
-	                    "W"
+	                    'span',
+	                    { className: 'icon-thumbnail' },
+	                    'W'
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
+	              'div',
+	              { className: 'list-sidebar' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username + '/email/' + this.props.username },
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail", onClick: function onClick() {
-	                        return _this2.handleClickEmail();
-	                      } },
-	                    _react2.default.createElement("i", { className: "pg-mail" })
+	                    'span',
+	                    { className: 'icon-thumbnail' },
+	                    _react2.default.createElement('i', { className: 'pg-mail' })
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
+	              'div',
+	              { className: 'list-sidebar' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username + '/social/' + this.props.username },
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail", onClick: function onClick() {
-	                        return _this2.handleClickSocial();
-	                      } },
-	                    _react2.default.createElement("i", { className: "pg-social" })
+	                    'span',
+	                    { className: 'icon-thumbnail' },
+	                    _react2.default.createElement('i', { className: 'pg-social' })
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "list-sidebar" },
+	              'div',
+	              { className: 'list-sidebar' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username + '/calendar/' + this.props.username },
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "span",
-	                    { className: "icon-thumbnail", onClick: function onClick() {
-	                        return _this2.handleClickCalendar();
-	                      } },
-	                    _react2.default.createElement("i", { className: "pg-calender" })
+	                    'span',
+	                    { className: 'icon-thumbnail' },
+	                    _react2.default.createElement('i', { className: 'pg-calender' })
 	                  )
 	                )
 	              )
@@ -26293,7 +26254,6 @@
 	  _createClass(Header, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log("header", this.props.history);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'header' },
@@ -26378,7 +26338,7 @@
 	            { className: "p-r-15 inline" },
 	            _react2.default.createElement(
 	              "a",
-	              { href: "#", className: "icon-set globe-fill" },
+	              { className: "icon-set globe-fill" },
 	              _react2.default.createElement("span", { className: "bubble" })
 	            )
 	          ),
@@ -26576,9 +26536,7 @@
 	  _createClass(Logout, [{
 	    key: 'handleLogout',
 	    value: function handleLogout() {
-	      //sessionStorage.clear();
-	      // setInterval( () => router.transitionTo('/'), 1000);
-	      this.props.history.pushState(null, '/');
+	      this.props.history.push('/');
 	    }
 	  }, {
 	    key: 'render',
@@ -26948,13 +26906,9 @@
 
 	var _EmailSidebar2 = _interopRequireDefault(_EmailSidebar);
 
-	var _EmailInbox = __webpack_require__(245);
+	var _CheckEmail = __webpack_require__(245);
 
-	var _EmailInbox2 = _interopRequireDefault(_EmailInbox);
-
-	var _NoEmail = __webpack_require__(246);
-
-	var _NoEmail2 = _interopRequireDefault(_NoEmail);
+	var _CheckEmail2 = _interopRequireDefault(_CheckEmail);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26981,18 +26935,13 @@
 	        { className: 'email' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-md-3' },
-	          _react2.default.createElement(_EmailSidebar2.default, null)
-	        ),
-	        _react2.default.createElement(
-	          'div',
 	          { className: 'col-md-2' },
-	          _react2.default.createElement(_EmailInbox2.default, { username: this.props.params.username })
+	          _react2.default.createElement(_EmailSidebar2.default, { username: this.props.params.username })
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-md-6' },
-	          _react2.default.createElement(_NoEmail2.default, null)
+	          { className: 'col-md-10' },
+	          this.props.children
 	        )
 	      );
 	    }
@@ -27007,7 +26956,7 @@
 /* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -27018,6 +26967,8 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(168);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27037,173 +26988,177 @@
 	  }
 
 	  _createClass(EmailSidebar, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "email-sidebar" },
+	        'div',
+	        { className: 'email-sidebar' },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "secondary-sidebar padding-30" },
+	          'div',
+	          { className: 'secondary-sidebar padding-30' },
 	          _react2.default.createElement(
-	            "a",
-	            { href: "#", className: "btn btn-complete btn-block btn-compose m-b-30" },
-	            "Compose"
-	          ),
-	          _react2.default.createElement(
-	            "p",
-	            { className: "menu-title" },
-	            "BROWSE"
-	          ),
-	          _react2.default.createElement(
-	            "ul",
-	            { className: "main-menu" },
+	            _reactRouter.Link,
+	            { to: 'home/' + this.props.username + '/email/' + this.props.username + '/compose' },
 	            _react2.default.createElement(
-	              "li",
-	              { className: "active" },
+	              'button',
+	              { className: 'btn btn-complete btn-block btn-compose m-b-30' },
+	              'Compose'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'menu-title' },
+	            'BROWSE'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'main-menu' },
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'active' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                _reactRouter.Link,
+	                { to: 'home/' + this.props.username + '/email/' + this.props.username },
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  _react2.default.createElement("i", { className: "pg-inbox" }),
-	                  " Inbox"
+	                  'span',
+	                  { className: 'title' },
+	                  _react2.default.createElement('i', { className: 'pg-inbox' }),
+	                  ' Inbox'
 	                ),
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "badge pull-right" },
-	                  "5"
+	                  'span',
+	                  { className: 'badge pull-right' },
+	                  '5'
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "li",
-	              { className: "" },
+	              'li',
+	              { className: '' },
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  _react2.default.createElement("i", { className: "pg-folder" }),
-	                  " All mail"
+	                  'span',
+	                  { className: 'title' },
+	                  _react2.default.createElement('i', { className: 'pg-folder' }),
+	                  ' All mail'
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "ul",
-	                { className: "sub-menu no-padding" },
+	                'ul',
+	                { className: 'sub-menu no-padding' },
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "#" },
+	                    'a',
+	                    null,
 	                    _react2.default.createElement(
-	                      "span",
-	                      { className: "title" },
-	                      "Important"
+	                      'span',
+	                      { className: 'title' },
+	                      'Important'
 	                    )
 	                  )
 	                ),
 	                _react2.default.createElement(
-	                  "li",
+	                  'li',
 	                  null,
 	                  _react2.default.createElement(
-	                    "a",
-	                    { href: "#" },
+	                    'a',
+	                    null,
 	                    _react2.default.createElement(
-	                      "span",
-	                      { className: "title" },
-	                      "Labeled"
+	                      'span',
+	                      { className: 'title' },
+	                      'Labeled'
 	                    )
 	                  )
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "li",
+	              'li',
 	              null,
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  _react2.default.createElement("i", { className: "pg-sent" }),
-	                  " Sent"
+	                  'span',
+	                  { className: 'title' },
+	                  _react2.default.createElement('i', { className: 'pg-sent' }),
+	                  ' Sent'
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "li",
+	              'li',
 	              null,
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  _react2.default.createElement("i", { className: "pg-spam" }),
-	                  " Spam"
+	                  'span',
+	                  { className: 'title' },
+	                  _react2.default.createElement('i', { className: 'pg-spam' }),
+	                  ' Spam'
 	                ),
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "badge pull-right" },
-	                  "10"
+	                  'span',
+	                  { className: 'badge pull-right' },
+	                  '10'
 	                )
 	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "p",
-	            { className: "menu-title m-t-20 all-caps" },
-	            "Quick view"
+	            'p',
+	            { className: 'menu-title m-t-20 all-caps' },
+	            'Quick view'
 	          ),
 	          _react2.default.createElement(
-	            "ul",
-	            { className: "sub-menu no-padding" },
+	            'ul',
+	            { className: 'sub-menu no-padding' },
 	            _react2.default.createElement(
-	              "li",
+	              'li',
 	              null,
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Documents"
+	                  'span',
+	                  { className: 'title' },
+	                  'Documents'
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "li",
+	              'li',
 	              null,
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Flagged"
+	                  'span',
+	                  { className: 'title' },
+	                  'Flagged'
 	                ),
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "badge pull-right" },
-	                  "5"
+	                  'span',
+	                  { className: 'badge pull-right' },
+	                  '5'
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "li",
+	              'li',
 	              null,
 	              _react2.default.createElement(
-	                "a",
-	                { href: "#" },
+	                'a',
+	                null,
 	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Images"
+	                  'span',
+	                  { className: 'title' },
+	                  'Images'
 	                )
 	              )
 	            )
@@ -27220,6 +27175,72 @@
 
 /***/ },
 /* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _EmailInbox = __webpack_require__(246);
+
+	var _EmailInbox2 = _interopRequireDefault(_EmailInbox);
+
+	var _NoEmail = __webpack_require__(247);
+
+	var _NoEmail2 = _interopRequireDefault(_NoEmail);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CheckEmail = function (_React$Component) {
+	  _inherits(CheckEmail, _React$Component);
+
+	  function CheckEmail() {
+	    _classCallCheck(this, CheckEmail);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckEmail).apply(this, arguments));
+	  }
+
+	  _createClass(CheckEmail, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'email' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-4' },
+	          _react2.default.createElement(_EmailInbox2.default, { username: this.props.params.username })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-md-8' },
+	          _react2.default.createElement(_NoEmail2.default, null)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return CheckEmail;
+	}(_react2.default.Component);
+
+	exports.default = CheckEmail;
+
+/***/ },
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27437,7 +27458,7 @@
 	exports.default = EmailInbox;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27502,7 +27523,7 @@
 	exports.default = NoEmail;
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27517,19 +27538,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SocialHeader = __webpack_require__(248);
+	var _SocialHeader = __webpack_require__(249);
 
 	var _SocialHeader2 = _interopRequireDefault(_SocialHeader);
 
-	var _SocialProfile = __webpack_require__(249);
+	var _SocialProfile = __webpack_require__(250);
 
 	var _SocialProfile2 = _interopRequireDefault(_SocialProfile);
 
-	var _SocialInput = __webpack_require__(250);
+	var _SocialInput = __webpack_require__(251);
 
 	var _SocialInput2 = _interopRequireDefault(_SocialInput);
 
-	var _SocialUpdate = __webpack_require__(251);
+	var _SocialUpdate = __webpack_require__(252);
 
 	var _SocialUpdate2 = _interopRequireDefault(_SocialUpdate);
 
@@ -27592,7 +27613,7 @@
 	exports.default = Social;
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27641,7 +27662,7 @@
 	exports.default = SocialHeader;
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27854,7 +27875,7 @@
 	exports.default = SocialProfile;
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27924,7 +27945,7 @@
 	exports.default = SocialInput;
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28016,7 +28037,7 @@
 	exports.default = SocialUpdate;
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28065,7 +28086,7 @@
 	exports.default = Calendar;
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28080,11 +28101,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _LoginCover = __webpack_require__(254);
+	var _LoginCover = __webpack_require__(255);
 
 	var _LoginCover2 = _interopRequireDefault(_LoginCover);
 
-	var _LoginForm = __webpack_require__(255);
+	var _LoginForm = __webpack_require__(256);
 
 	var _LoginForm2 = _interopRequireDefault(_LoginForm);
 
@@ -28131,7 +28152,7 @@
 	exports.default = Login;
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28202,7 +28223,7 @@
 	exports.default = LoginCover;
 
 /***/ },
-/* 255 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28235,24 +28256,15 @@
 	  }
 
 	  _createClass(LoginForm, [{
-	    key: 'getUsername',
-	    value: function getUsername(ref) {
-	      this.usernameRef = ref;
-	    }
-	  }, {
-	    key: 'getPassword',
-	    value: function getPassword(ref) {
-	      this.passwordRef = ref;
-	    }
-	  }, {
 	    key: 'handleLogin',
-	    value: function handleLogin() {
+	    value: function handleLogin(val) {
+	      val.preventDefault();
 	      var username = this.usernameRef.value;
 	      var password = this.passwordRef.value;
 	      this.usernameRef.value = '';
 	      this.passwordRef.value = '';
 	      if (username == password) {
-	        this.props.history.pushState(null, 'home/' + username);
+	        this.props.history.push('home/' + username);
 	      } else {
 	        alert("username and password doesn't match!");
 	      }
@@ -28292,7 +28304,7 @@
 	                  'div',
 	                  { className: 'controls' },
 	                  _react2.default.createElement('input', { type: 'text', placeholder: 'User Name', className: 'form-control', ref: function ref(_ref) {
-	                      return _this2.getUsername(_ref);
+	                      return _this2.usernameRef = _ref;
 	                    } })
 	                )
 	              ),
@@ -28308,14 +28320,14 @@
 	                  'div',
 	                  { className: 'controls' },
 	                  _react2.default.createElement('input', { type: 'password', className: 'form-control', placeholder: 'Credentials', ref: function ref(_ref2) {
-	                      return _this2.getPassword(_ref2);
+	                      return _this2.passwordRef = _ref2;
 	                    } })
 	                )
 	              ),
 	              _react2.default.createElement(
 	                'button',
-	                { onClick: function onClick() {
-	                    return _this2.handleLogin();
+	                { onClick: function onClick(val) {
+	                    return _this2.handleLogin(val);
 	                  }, type: 'submit', className: 'btn btn-primary m-t-10' },
 	                'Sign in'
 	              )
@@ -28332,7 +28344,7 @@
 	exports.default = LoginForm;
 
 /***/ },
-/* 256 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28347,7 +28359,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BigBox = __webpack_require__(257);
+	var _BigBox = __webpack_require__(258);
 
 	var _BigBox2 = _interopRequireDefault(_BigBox);
 
@@ -28457,7 +28469,7 @@
 	exports.default = HomeContent;
 
 /***/ },
-/* 257 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -28500,6 +28512,142 @@
 	}(_react2.default.Component);
 
 	exports.default = BigBox;
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ComposeEmail = function (_React$Component) {
+	  _inherits(ComposeEmail, _React$Component);
+
+	  function ComposeEmail() {
+	    _classCallCheck(this, ComposeEmail);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ComposeEmail).apply(this, arguments));
+	  }
+
+	  _createClass(ComposeEmail, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "compose-email" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-sm-12 no-padding" },
+	          _react2.default.createElement("div", { className: "wysiwyg5-wrapper email-toolbar-wrapper" }),
+	          _react2.default.createElement(
+	            "form",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "form-group-attached" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row clearfix" },
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-6" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group form-group-default" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      null,
+	                      "TO:"
+	                    ),
+	                    _react2.default.createElement("input", { name: "to", "data-role": "tagsinput", className: "form-control tagsinput", type: "text" })
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  "div",
+	                  { className: "col-sm-6" },
+	                  _react2.default.createElement(
+	                    "div",
+	                    { className: "form-group form-group-default" },
+	                    _react2.default.createElement(
+	                      "label",
+	                      null,
+	                      "CC:"
+	                    ),
+	                    _react2.default.createElement("input", { type: "text", className: "form-control", name: "cc", placeholder: "Add Carbon Copy" })
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "form-group form-group-default" },
+	                _react2.default.createElement(
+	                  "label",
+	                  null,
+	                  "Subject"
+	                ),
+	                _react2.default.createElement("input", { type: "text", className: "form-control", name: "subject" })
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "wysiwyg5-wrapper email-body-wrapper" },
+	            _react2.default.createElement("textarea", { className: "wysiwyg email-body" })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "row p-b-20" },
+	          _react2.default.createElement("div", { className: "col-sm-1" }),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-9" },
+	            _react2.default.createElement(
+	              "button",
+	              { className: "btn btn-white btn-cons" },
+	              "Cancel"
+	            ),
+	            _react2.default.createElement(
+	              "button",
+	              { className: "btn btn-complete btn-cons m-l-10" },
+	              "Send"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "col-sm-1" },
+	            _react2.default.createElement(
+	              "button",
+	              { className: "btn btn-complete pull-right" },
+	              _react2.default.createElement("i", { className: "pg-save" })
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ComposeEmail;
+	}(_react2.default.Component);
+
+	exports.default = ComposeEmail;
 
 /***/ }
 /******/ ]);

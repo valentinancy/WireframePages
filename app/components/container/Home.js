@@ -4,7 +4,6 @@ import Header from './header/Header';
 
 class Home extends React.Component {
   render() {
-    //console.log(this.props.params)
     return(
       <div className="main-container">
         <div className="col-md-1">

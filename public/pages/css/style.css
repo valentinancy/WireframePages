@@ -127,7 +127,7 @@
 }
 
 .email-inbox {
-  margin-left: -118px;
+  margin-left: -27px;
 }
 
 .no-email {
@@ -161,4 +161,14 @@
 
 .logout {
   margin-top: 10px;
+}
+
+.email-body-wrapper {
+    background-color: white;
+  height: 450px;
+}
+
+.compose-email {
+  margin-left: -12px;
+  background-color: white;
 }

@@ -1,27 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 class Sidebar extends React.Component {
-  handleClickWidget() {
-    this.props.history.pushState(null,`home/${this.props.username}/widget/${this.props.username}`)
-    // browserHistory.push(`home/${this.props.username}/widget/${this.props.username}`)
-  }
-
-  handleClickEmail() {
-    this.props.history.pushState(null,`home/${this.props.username}/email/${this.props.username}`)
-  }
-
-  handleClickSocial() {
-    this.props.history.pushState(null,`home/${this.props.username}/social/${this.props.username}`)
-  }
-
-  handleClickCalendar() {
-    this.props.history.pushState(null,`home/${this.props.username}/calendar/${this.props.username}`)
-  }
-
-  handleClickHome() {
-    this.props.history.pushState(null,`home/${this.props.username}`)
-  }
-
   render() {
     return(
       <div className="sidebar">
@@ -32,19 +12,29 @@ class Sidebar extends React.Component {
         <div className="sidebar-menu sidebar-menu-custom">
           <ul className="menu-items ul-style">
             <div className="list-sidebar">
-              <a href=''><li className=""><span className="icon-thumbnail" onClick={() => this.handleClickHome()}><i className="pg-home"></i></span></li></a>
+              <Link to={`home/${this.props.username}`}>
+                <li className=""><span className="icon-thumbnail"><i className="pg-home"></i></span></li>
+              </Link>
             </div>
             <div className="list-sidebar">
-              <li className=""><a href='' className="detailed"><span className="icon-thumbnail" onClick={() => this.handleClickWidget()}>W</span></a></li>
+              <Link to={`home/${this.props.username}/widget/${this.props.username}`}>
+                <li className=""><span className="icon-thumbnail">W</span></li>
+              </Link>
             </div>
             <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail" onClick={() => this.handleClickEmail()}><i className="pg-mail"></i></span></li></a>
+              <Link to={`home/${this.props.username}/email/${this.props.username}`}>
+                <li><span className="icon-thumbnail"><i className="pg-mail"></i></span></li>
+              </Link>
             </div>
             <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail" onClick={() => this.handleClickSocial()}><i className="pg-social"></i></span></li></a>
+              <Link to={`home/${this.props.username}/social/${this.props.username}`}>
+                <li><span className="icon-thumbnail"><i className="pg-social"></i></span></li>
+              </Link>
             </div>
             <div className="list-sidebar">
-              <a href=''><li><span className="icon-thumbnail" onClick={() => this.handleClickCalendar()}><i className="pg-calender"></i></span></li></a>
+              <Link to={`home/${this.props.username}/calendar/${this.props.username}`}>
+                <li><span className="icon-thumbnail" ><i className="pg-calender"></i></span></li>
+              </Link>
             </div>
           </ul>
         </div>

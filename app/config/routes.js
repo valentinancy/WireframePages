@@ -8,29 +8,23 @@ import Social from '../components/container/content/Social';
 import Calendar from '../components/container/content/Calendar';
 import Login from '../components/Login';
 import HomeContent from '../components/container/content/HomeContent'
+import CheckEmail from '../components/container/content/email/CheckEmail';
+import ComposeEmail from '../components/container/content/email/ComposeEmail';
 
 export default (
-  <Route path="/" component={Main}>
-    <Route path="home/:username" component={Home}>
-      <IndexRoute component={HomeContent}></IndexRoute>
-      <Route path="widget/:second" component={Widget}></Route>
-      <Route path="email/:second" component={Email}></Route>
-      <Route path="social/:second" component={Social}></Route>
-      <Route path="calendar/:second" component={Calendar}></Route>
+  <Router history={browserHistory}>
+    <Route path="/" component={Main}>
+      <Route path="home/:username" component={Home}>
+        <IndexRoute component={HomeContent}></IndexRoute>
+        <Route path="widget/:second" component={Widget}></Route>
+        <Route path="email/:second" component={Email}>
+          <Route path="compose" component={ComposeEmail}></Route>
+          <IndexRoute component={CheckEmail}></IndexRoute>
+        </Route>
+        <Route path="social/:second" component={Social}></Route>
+        <Route path="calendar/:second" component={Calendar}></Route>
+      </Route>
+      <IndexRoute component={Login}></IndexRoute>
     </Route>
-    <IndexRoute component={Login}></IndexRoute>
-  </Route>
+  </Router>
 );
-
-{/*<Router history={browserHistory}>
-  <Route path="/" component={Main}>
-    <Route path="home/:username" component={Home}>
-      <IndexRoute component={HomeContent}></IndexRoute>
-      <Route path="widget/:second" component={Widget}></Route>
-      <Route path="email/:second" component={Email}></Route>
-      <Route path="social/:second" component={Social}></Route>
-      <Route path="calendar/:second" component={Calendar}></Route>
-    </Route>
-    <IndexRoute component={Login}></IndexRoute>
-  </Route>
-</Router>*/}

@@ -2,9 +2,7 @@ import React from 'react';
 
 class Logout extends React.Component {
   handleLogout() {
-    //sessionStorage.clear();
-    // setInterval( () => router.transitionTo('/'), 1000);
-    this.props.history.pushState(null,'/')
+    this.props.history.push('/')
   }
 
   render() {
