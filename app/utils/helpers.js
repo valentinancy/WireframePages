@@ -11,21 +11,29 @@ export default function getApiTokenAuth(username, password) {
   })
 }
 
-export default function setLogin(username, password, token) {
+export function setLogin(username, password, token) {
   return axios ({
     method: 'post',
-    url: 'http://54.169.153.88:8000/apitokenauth/',
+    url: 'http://54.169.153.88:8000/setlogin/',
     data: {
-      username: username,
+      login_id: username,
       password: password
     },
     headers: {
-      Authorization: 'jwt' + token
+      Authorization: 'jwt ' + token
     }
   })
 }
 
-
+export function tokenverify(token) {
+  return axios ({
+    method: 'post',
+    url: 'http://54.169.153.88:8000/apitokenverify/',
+    data: {
+      token: token
+    }
+  })
+}
 
 
 

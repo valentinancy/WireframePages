@@ -1,73 +1,31 @@
 import React from 'react';
 import getApiTokenAuth from '../../utils/helpers';
-import setLogin from '../../utils/helpers';
+import {setLogin} from '../../utils/helpers';
+import md5 from 'md5';
 
 class LoginForm extends React.Component {
 
   handleLogin(val) {
     val.preventDefault();
     const username = this.usernameRef.value;
-    const password = this.passwordRef.value;
+    const password = md5(this.passwordRef.value);
     this.usernameRef.value = '';
     this.passwordRef.value = '';
-    // if (username==password) {
-    //   this.props.history.push(`home/${username}`)
-    // }
-    // else {
-    //   alert("username and password doesn't match!")
-    // }
 
-    getApiTokenAuth(username,password) //INI MAU GET TOKEN NYA
-      .then(function(data){
-        const token = data.data.token; //INI TOKEN NYA
-        console.log(token) //INI MAU LIAT TOKEN NYA
-        setLogin(username,password,token) //KARENA SI TOKEN GA DIKENALI DI LUAR BLOCK STATEMENT, JADINYA SI SETLOGIN GUA TULIS DI SINI KA
-        .then(function(data){
-            console.log('setLogin',data.statusText) //INI MAU LIAT STATUS TEXT NYA
-            if(data.statusText=='OK') { //JADI KALO STATUSNYA OK BARU BISA LOG IN
-              console.log(username) //INI MAU MASTIIN KALO USERNAME NYA TETEP SAMPE KE DALEM SINI
-              console.log("masuk if") // INI ISENG AJA HEHE
-              access = 'ok'; //JADI INI MAU NGISI NILAI ACCESS JADI "OK", POKOKNYA ARTINYA BOLEH LOG IN
-            }
-            else {
-              console.log("masuk else")
-              alert("username and password doesn't match!")
-            }
-        });
-      });
-      console.log(access)
-      if(access=='ok') { // JADI PENGEN NYA NILAI ACCESS YANG ADA DI BARIS 30 TETEP BISA KE BAWA SAMPE SINI
-        this.props.history.push(`home/${username}`) // BARIS INI GATAU KENAPA KALO DI TARO BARIS 30 JADI "UNCAUGHT LALALA"
-      }                                             // MAKANYA MAU DITARO DI LUAR FUNGSI YG KE DATABASE, SOALNYA KALO DISINI BISA GA "UNCAUGHT LALALA"
-      else {                                        // SEMANGAT KADIS WK
-        alert('gak match cuy')
-      }
+    getApiTokenAuth(username,password)
+    .then((res) => {
+      const token = (res.data.token);
+      localStorage.setItem('token',token)
+      setLogin(username,password,token)
+      .then((data) => {
+        (data && this.props.history.push(`home/${username}`))
+      })
+      .catch((data) => console.log(data))
+    })
+    .catch((res) => console.log(res))
   }
 
-
-
-
-  // componentDidMount() {
-  //   var tokenVal = "hey";
-  //   getApiTokenAuth('iki','71fd94a0d995244544c153158bbbefc5')
-  //     .then(function(data){
-  //       const token = data.data.token;
-  //       console.log("token",token)
-  //       tokenVal = "halo"
-  //       setLogin('iki','71fd94a0d995244544c153158bbbefc5',token)
-  //       .then(function(response){
-  //           console.log('setLogin',response)
-  //           if(data.statusText=='OK') {
-  //           }
-  //           else {
-  //             alert("username and password doesn't match!")
-  //           }
-  //       });
-  //     });
-  // }
-
   render() {
-
     return (
       <div className="login-form">
         <div className="login-container bg-white">

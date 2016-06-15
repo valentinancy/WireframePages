@@ -1,8 +1,17 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Header from './header/Header';
+import {tokenverify} from '../../utils/helpers';
 
 class Home extends React.Component {
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    tokenverify(token)
+    .catch((res) => {
+      this.props.history.push('/')
+    })
+  }
+
   render() {
     return(
       <div className="main-container">
