@@ -2,7 +2,7 @@ import React from 'react';
 
 class Logout extends React.Component {
   handleLogout() {
-    this.props.history.push('/')
+    this.context.router.push('/')
   }
 
   render() {
@@ -12,6 +12,10 @@ class Logout extends React.Component {
       </div>
     )
   }
+}
+
+Logout.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default Logout

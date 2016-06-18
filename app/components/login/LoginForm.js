@@ -3,6 +3,7 @@ import getApiTokenAuth from '../../utils/helpers';
 import {setLogin} from '../../utils/helpers';
 import md5 from 'md5';
 
+
 class LoginForm extends React.Component {
 
   handleLogin(val) {
@@ -18,7 +19,7 @@ class LoginForm extends React.Component {
       localStorage.setItem('token',token)
       setLogin(username,password,token)
       .then((data) => {
-        (data && this.props.history.push(`home/${username}`))
+        (data && this.context.router.push(`home/${username}`))
       })
       .catch((data) => console.log(data))
     })
@@ -52,6 +53,10 @@ class LoginForm extends React.Component {
       </div>
     )
   }
+}
+
+LoginForm.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default LoginForm

@@ -10,7 +10,7 @@ class Login extends React.Component {
           <LoginCover/>
         </div>
         <div className="col-md-5">
-          <LoginForm history={this.props.history}/>
+          <LoginForm/>
         </div>
       </div>
     )

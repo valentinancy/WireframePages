@@ -8,7 +8,7 @@ class Home extends React.Component {
     const token = localStorage.getItem('token')
     tokenverify(token)
     .catch((res) => {
-      this.props.history.push('/')
+      this.context.router.push('/')
     })
   }
 
@@ -16,11 +16,11 @@ class Home extends React.Component {
     return(
       <div className="main-container">
         <div className="col-md-1">
-          <Sidebar history={this.props.history} username={this.props.params.username}/>
+          <Sidebar username={this.props.params.username}/>
         </div>
         <div className="col-md-11">
           <div className="row">
-            <Header history={this.props.history} username={this.props.params.username} />
+            <Header username={this.props.params.username} />
           </div>
           <div className="row">
             {this.props.children}
@@ -29,6 +29,10 @@ class Home extends React.Component {
       </div>
     )
   }
+}
+
+Home.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
 
 export default Home

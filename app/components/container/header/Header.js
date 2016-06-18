@@ -21,7 +21,7 @@ class Header extends React.Component {
           <ProfileBar username={this.props.username}/>
         </div>
         <div className="col-md-1">
-          <Logout history={this.props.history}/>
+          <Logout/>
         </div>
       </div>
     )

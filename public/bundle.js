@@ -26032,7 +26032,7 @@
 
 	      var token = localStorage.getItem('token');
 	      (0, _helpers.tokenverify)(token).catch(function (res) {
-	        _this2.props.history.push('/');
+	        _this2.context.router.push('/');
 	      });
 	    }
 	  }, {
@@ -26044,7 +26044,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-1' },
-	          _react2.default.createElement(_Sidebar2.default, { history: this.props.history, username: this.props.params.username })
+	          _react2.default.createElement(_Sidebar2.default, { username: this.props.params.username })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -26052,7 +26052,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
-	            _react2.default.createElement(_Header2.default, { history: this.props.history, username: this.props.params.username })
+	            _react2.default.createElement(_Header2.default, { username: this.props.params.username })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -26066,6 +26066,10 @@
 
 	  return Home;
 	}(_react2.default.Component);
+
+	Home.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 	exports.default = Home;
 
@@ -26292,7 +26296,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-1' },
-	          _react2.default.createElement(_Logout2.default, { history: this.props.history })
+	          _react2.default.createElement(_Logout2.default, null)
 	        )
 	      );
 	    }
@@ -26548,7 +26552,7 @@
 	  _createClass(Logout, [{
 	    key: 'handleLogout',
 	    value: function handleLogout() {
-	      this.props.history.push('/');
+	      this.context.router.push('/');
 	    }
 	  }, {
 	    key: 'render',
@@ -26571,6 +26575,10 @@
 
 	  return Logout;
 	}(_react2.default.Component);
+
+	Logout.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 	exports.default = Logout;
 
@@ -29429,7 +29437,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'col-md-5' },
-	          _react2.default.createElement(_LoginForm2.default, { history: this.props.history })
+	          _react2.default.createElement(_LoginForm2.default, null)
 	        )
 	      );
 	    }
@@ -29567,7 +29575,7 @@
 	        var token = res.data.token;
 	        localStorage.setItem('token', token);
 	        (0, _helpers.setLogin)(username, password, token).then(function (data) {
-	          data && _this2.props.history.push('home/' + username);
+	          data && _this2.context.router.push('home/' + username);
 	        }).catch(function (data) {
 	          return console.log(data);
 	        });
@@ -29646,6 +29654,10 @@
 
 	  return LoginForm;
 	}(_react2.default.Component);
+
+	LoginForm.contextTypes = {
+	  router: _react2.default.PropTypes.object.isRequired
+	};
 
 	exports.default = LoginForm;
 
